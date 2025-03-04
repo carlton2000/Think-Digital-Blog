@@ -1,0 +1,129 @@
+body {
+    display: flex;
+    flex-direction: column; /* Added to accommodate the navbar */
+    justify-content: flex-start; /* Modified to start at the top */
+    align-items: center;
+    min-height: 100vh; /* Changed height to min-height */
+    margin: 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+    color: white; /* Changed text color to white */
+    font-family: 'Arial', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 5%;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 5%;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin-top: 50px; /* Added margin to push it down from the navbar */
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+#countdown {
+    font-size: 2.5em;
+    margin: 30px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#emailForm input {
+    padding: 12px;
+    margin-right: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+#emailForm button {
+    padding: 12px 25px;
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#emailForm button:hover {
+    background-color: #0099cc;
+}
+
+.animated-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.animated-dots .dot {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 10px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.animated-dots .dot:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.animated-dots .dot:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
