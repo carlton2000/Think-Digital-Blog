@@ -1,26 +1,6 @@
 const countdownDisplay = document.getElementById('countdown');
 const launchDate = new Date('2024-12-31T00:00:00').getTime(); // Set your launch date
 
-function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = launchDate - now;
-
-    if (distance > 0) {
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdownDisplay.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    } else {
-        countdownDisplay.innerHTML = 'Launched!';
-        clearInterval(countdownInterval);
-    }
-}
-
-updateCountdown();
-const countdownInterval = setInterval(updateCountdown, 1000);
-
 document.getElementById('emailForm').addEventListener('submit', function(event) {
     event.preventDefault();
     const email = document.getElementById('email').value;
@@ -29,3 +9,12 @@ document.getElementById('emailForm').addEventListener('submit', function(event) 
     alert('Thank you! We will notify you.');
     document.getElementById('email').value = "";
 });
+
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const navMenu = document.getElementById('nav-menu');
+
+hamburgerBtn.addEventListener('click', () => {
+    hamburgerBtn.classList.toggle('active');
+    navMenu.classList.toggle('show');
+    console.log("button was clicked")
+})
